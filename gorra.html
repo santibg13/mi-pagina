@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gorra ECO-STYLE | PUMA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Montserrat', sans-serif; margin:0; background:#fff;}
+    header {background:#000; color:#fff; padding:15px 40px;}
+    header a {color:#fff; text-decoration:none; font-weight:600;}
+    section {padding:60px 10%; display:flex; gap:40px; align-items:center;}
+
+    /* Imagen con tamaño uniforme y efecto zoom */
+    img {
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: zoom-in;
+    }
+    img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+    .zoom-container {
+      position: relative;
+      overflow: hidden;
+      width: 450px;
+      height: 450px;
+      border-radius: 10px;
+    }
+    .zoom-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .zoom-container:hover img {
+      transform: scale(1.5);
+      cursor: zoom-in;
+    }
+
+    .info {width:50%;}
+    .info h1 {font-size:2.5rem; font-weight:800; margin-bottom:15px;}
+    .info p {color:#444; margin-bottom:20px; line-height:1.6;}
+    .btn {
+      background:#e3000b; color:#fff; text-decoration:none;
+      padding:15px 40px; font-weight:700; text-transform:uppercase;
+      border:none; cursor:pointer; border-radius:5px;
+    }
+    footer {background:#000; color:#fff; text-align:center; padding:30px; margin-top:50px;}
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .popup-content {
+      background: #fff;
+      margin: 6% auto;
+      padding: 30px 40px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .popup-content h2 {text-align: center; margin-bottom: 20px;}
+    .popup-content input, .popup-content select {
+      width: 100%; padding: 10px; margin-bottom: 15px;
+      border: 1px solid #ccc; border-radius: 5px;
+    }
+    .popup-content .btn {
+      width: 100%; display: block; text-align: center;
+    }
+    .close {
+      float: right; font-size: 25px; cursor: pointer;
+    }
+
+    /* Barra de notificación superior */
+    .notificacion {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      padding: 15px 10px;
+      font-weight: 500;
+      z-index: 2000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .notificacion button {
+      margin-left: 15px;
+      background: #e3000b;
+      color: #fff;
+      border: none;
+      padding: 6px 15px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .notificacion button:hover {
+      background: #b00008;
+    }
+  </style>
+</head>
+<body>
+  <header><a href="index.html">← Volver a la colección</a></header>
+
+  <section>
+    <div class="zoom-container">
+      <img src="C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/gorra-puma.png" alt="Gorra ECO-STYLE">
+    </div>
+    <div class="info">
+      <h1>Gorra ECO-STYLE</h1>
+      <p>Confeccionada con cáñamo y poliéster reciclado. Ligera, transpirable y perfecta para entrenar al aire libre, cuidando el planeta y tu estilo.</p>
+      <p><strong>Precio:</strong> $120.000 COP</p>
+      <button class="btn" id="comprarBtn">Comprar ahora</button>
+
+      <!-- Popup -->
+      <div id="popupCompra" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <h2>Finalizar compra</h2>
+          <form>
+            <label>Nombre completo:</label>
+            <input type="text" required>
+
+            <label>Cédula:</label>
+            <input type="number" required>
+
+            <label>Dirección:</label>
+            <input type="text" required>
+
+            <label>Método de pago:</label>
+            <select required>
+              <option value="">Seleccione</option>
+              <option>PSE</option>
+              <option>Tarjeta de crédito</option>
+              <option>Tarjeta débito</option>
+            </select>
+
+            <label>Forma de entrega:</label>
+            <select required>
+              <option value="">Seleccione</option>
+              <option>Domicilio</option>
+              <option>Reclamar en tienda</option>
+            </select>
+
+            <button type="button" class="btn" id="confirmarPedido">Confirmar pedido</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 PUMA ECO-STYLE</footer>
+
+  <!-- Notificación -->
+  <div id="notificacionCompra" class="notificacion">
+    <span>PUMA-ECO dice: 🛍️ Compra realizada con éxito. ¡Gracias por tu compra!</span>
+    <button id="btnAceptar">Aceptar</button>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popupCompra");
+    const btn = document.getElementById("comprarBtn");
+    const closeBtn = document.querySelector(".close");
+    const confirmarBtn = document.getElementById("confirmarPedido");
+
+    // Abrir popup
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      popup.style.display = "block";
+    });
+
+    // Cerrar con X
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+    // Cerrar si se hace clic fuera
+    window.addEventListener("click", (e) => {
+      if (e.target === popup) popup.style.display = "none";
+    });
+
+    // Confirmar pedido → mostrar notificación
+    confirmarBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+
+      const notificacion = document.getElementById("notificacionCompra");
+      notificacion.style.display = "block";
+
+      const btnAceptar = document.getElementById("btnAceptar");
+      btnAceptar.addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    });
+  </script>
+</body>
+</html>

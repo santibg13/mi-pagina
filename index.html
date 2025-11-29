@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PUMA ECO-STYLE</title>
+
+  <!-- Fuentes e iconos -->
+  <link href="https://1000marcas.net/wp-content/uploads/2019/12/logo-Puma.png" rel="stylesheet">
+  <link href="https://1000marcas.net/wp-content/uploads/2019/12/logo-Puma.png" rel="stylesheet">
+
+  <style>
+    :root{
+      --black:#000;
+      --white:#fff;
+      --dark:#111;
+      --gray:#f5f5f5;
+      --muted:#777;
+      --red:#e3000b;
+      --eco:#0b7b38;
+      --container:min(1200px,92vw);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Montserrat,system-ui,Arial;
+      color:var(--dark);
+      background:#fff;
+    }
+
+    /* TOP BAR */
+    .topbar{
+      background:#e7f5eb;
+      color:#0b5f2a;
+      text-align:center;
+      font-size:.9rem;
+      padding:.55rem 1rem;
+      font-weight:600;
+      border-bottom:1px solid #cfe7d6;
+    }
+
+    /* HEADER / NAV */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#000;
+      color:#fff;
+      border-bottom:1px solid #222;
+    }
+
+    .nav{
+      max-width:var(--container);
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:.75rem 1rem;
+    }
+
+    .brand img{
+      height:26px;
+      filter:invert(1);
+    }
+
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 1rem;
+      text-transform:uppercase;
+      font-weight:700;
+      font-size:.9rem;
+      letter-spacing:.03em;
+    }
+
+    .menu a:hover{
+      color:#ccc;
+    }
+
+    .icons i{
+      font-size:1.4rem;
+      margin-left:1rem;
+      cursor:pointer;
+      color:#fff;
+    }
+
+    .subnav{
+      background:#fff;
+      border-bottom:1px solid #eee;
+    }
+
+    .subnav-row{
+      max-width:var(--container);
+      margin:auto;
+      display:flex;
+      gap:1.2rem;
+      overflow-x:auto;
+      padding:.6rem 1rem;
+    }
+
+    .chip{
+      font-size:.85rem;
+      font-weight:700;
+      text-transform:uppercase;
+      color:#333;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+
+    .chip:hover{
+      color:var(--eco);
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      height:80vh;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:url('https://www.futbolemotion.com/imagescms/postblogs/21620/grandes/Ney5.webp') center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.8));
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      color:#fff;
+      padding:1rem;
+    }
+
+    .hero-content h1{
+      font-size:clamp(2.4rem,6vw,4.2rem);
+      text-transform:uppercase;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-shadow:0 4px 18px rgba(0,0,0,.7);
+    }
+
+    .hero-content p{
+      max-width:760px;
+      margin:1rem auto 1.8rem;
+      font-size:1.1rem;
+      color:#f5f5f5;
+      text-shadow:0 3px 12px rgba(0,0,0,.6);
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--red);
+      color:#fff;
+      padding:1rem 2.3rem;
+      text-decoration:none;
+      text-transform:uppercase;
+      font-weight:800;
+      border-radius:6px;
+      letter-spacing:.06em;
+      font-size:.9rem;
+    }
+
+    .btn:hover{
+      background:#b00008;
+    }
+
+    /* SECCIONES GENERALES */
+    section{
+      scroll-margin-top:80px;
+    }
+
+    .wrap{
+      max-width:var(--container);
+      margin:auto;
+      padding:0 1rem;
+    }
+
+    .section-title{
+      font-size:2rem;
+      font-weight:900;
+      text-transform:uppercase;
+      margin-bottom:1rem;
+    }
+
+    .section-sub{
+      color:var(--muted);
+      max-width:700px;
+      margin-bottom:2rem;
+      font-size:.98rem;
+    }
+
+    /* COLECCIÓN DESTACADA */
+    .masvendidos{
+      padding:3.5rem 0 2.5rem;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid #eee;
+      transition:.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
+    }
+
+    .card-img{
+      aspect-ratio:4/5;
+      background:#f3f3f3 center/cover no-repeat;
+    }
+
+    .card-body{
+      padding:1rem;
+    }
+
+    .card-name{
+      font-weight:700;
+      margin-bottom:.2rem;
+    }
+
+    .card-desc{
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    .card-price{
+      font-weight:900;
+      margin-top:.5rem;
+    }
+
+    .btn-mini{
+      display:inline-block;
+      margin-top:.7rem;
+      background:var(--red);
+      color:#fff;
+      font-size:.8rem;
+      font-weight:700;
+      text-decoration:none;
+      padding:.55rem 1.2rem;
+      border-radius:999px;
+      text-transform:uppercase;
+    }
+
+    .btn-mini:hover{
+      background:#b00008;
+    }
+
+    /* PARALLAX ECO-STYLE (HUELLA) */
+    .parallax-eco{
+      background-image:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/huella-eco-style.jpg');
+      /* Si no te carga, guarda la imagen en tu proyecto y cambia esta ruta por algo tipo:
+         background-image:url("huella-eco-style.jpg"); */
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      height:70vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      position:relative;
+    }
+
+    .parallax-eco::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.45);
+    }
+
+    .parallax-eco .content{
+      position:relative;
+      z-index:2;
+      max-width:800px;
+      padding:20px;
+    }
+
+    .parallax-eco h2{
+      font-size:3rem;
+      text-transform:uppercase;
+      font-weight:800;
+      letter-spacing:3px;
+    }
+
+    .parallax-eco p{
+      margin-top:15px;
+      font-size:1.2rem;
+      color:#e9e9e9;
+    }
+
+    /* ACERCA / HISTORIA / MISIÓN / VISIÓN / DISEÑO */
+    .acerca{
+      padding:4rem 0 3rem;
+      background:#f9f9f9;
+    }
+
+    .acerca-grid{
+      display:grid;
+      grid-template-columns:1.3fr 1fr;
+      gap:2rem;
+      align-items:center;
+    }
+
+    .acerca-text p{
+      margin-bottom:1rem;
+      font-size:1rem;
+      color:#444;
+      line-height:1.6;
+    }
+
+    .acerca-img{
+      background:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/bombillo-eco.jpg') center/cover no-repeat;
+      height:340px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.18);
+    }
+
+    .mv{
+      padding:3rem 0;
+      background:#fff;
+    }
+
+    .mv-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .mv-card{
+      background:#fafafa;
+      padding:1.8rem;
+      border-radius:12px;
+      border:1px solid #eee;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    }
+
+    .mv-card h3{
+      font-weight:900;
+      margin-bottom:.6rem;
+    }
+
+    .mv-card p{
+      color:#555;
+      line-height:1.6;
+    }
+
+    .diseno{
+      padding:3rem 0 3.5rem;
+      background:#f9f9f9;
+    }
+
+    .diseno-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .diseno-img{
+      background:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/bocetoguayo.jpg') center/cover no-repeat;
+      height:330px;
+      border-radius:12px;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
+
+    /* TECNOLOGÍA ECO */
+    .tecnologia{
+      padding:3.5rem 0 2.5rem;
+      background:#f5f5f5;
+    }
+
+    .tec-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .tec-card{
+      background:#fff;
+      border-radius:12px;
+      padding:1.6rem;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+    }
+
+    .tec-icon{
+      font-size:2rem;
+      color:var(--eco);
+      margin-bottom:.6rem;
+    }
+
+    .tec-card h3{
+      font-weight:800;
+      margin-bottom:.4rem;
+    }
+
+    .tec-card p{
+      font-size:.95rem;
+      color:#555;
+    }
+
+   /* ===== MATERIALES RESPONSABLES — NUEVO DISEÑO ===== */
+.materiales {
+  background:#0b0b0b;
+  padding: 6rem 0 5rem;
+  color:#fff;
+}
+
+.materiales .section-title {
+  text-align:center;
+  font-size:2.4rem;
+  font-weight:900;
+  color:#fff;
+  margin-bottom:1rem;
+}
+
+.materiales .section-sub {
+  text-align:center;
+  max-width:720px;
+  margin:auto;
+  margin-bottom:3rem;
+  font-size:1rem;
+  color:#cccccc;
+}
+
+/* CUADROS EN FILA — ESTILO PUMA */
+.mat-grid {
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.mat-card {
+  background:#ffffff;
+  color:#111;
+  width:255px;
+  height:255px;  /* 👈 Hace los cuadros CUADRADOS */
+  padding:1.4rem;
+  border:1px solid #ddd;
+  border-radius:0; /* 👈 SIN puntas redondeadas */
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  box-shadow:0 8px 18px rgba(0,0,0,0.25);
+  transition:.3s ease;
+}
+
+.mat-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 14px 28px rgba(0,0,0,0.35);
+}
+
+/* TAG */
+.mat-tag {
+  color:#0b7b38;
+  font-weight:700;
+  text-transform:uppercase;
+  font-size:.75rem;
+  margin-bottom:.4rem;
+  letter-spacing:.03em;
+}
+
+.mat-card h4 {
+  font-size:1.1rem;
+  font-weight:800;
+  margin-bottom:.5rem;
+}
+
+.mat-card p {
+  color:#444;
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .mat-grid {
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .mat-card {
+    width:45%;
+    height:auto;
+    min-height:230px;
+  }
+}
+
+@media(max-width:600px){
+  .mat-card {
+    width:100%;
+  }
+} 
+
+    /* ATLETAS */
+    .atletas{
+      padding:3.5rem 0 2.5rem;
+      background:#0b0b0b;
+      color:#fff;
+    }
+
+    .atletas-inner{
+      display:grid;
+      grid-template-columns:1.4fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .atleta-img{
+      border-radius:20px;
+      background:url('https://www.futbolemotion.com/imagescms/postblogs/21620/grandes/ney3.webp') center/cover no-repeat;
+      min-height:320px;
+      box-shadow:0 12px 28px rgba(0,0,0,.6);
+    }
+
+    .badge-eco{
+      display:inline-block;
+      background:var(--eco);
+      color:#fff;
+      padding:.3rem .8rem;
+      border-radius:999px;
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+
+    /* PRODUCTO DESTACADO + TALLAS */
+    .destacado{
+      padding:3.5rem 0 2.5rem;
+    }
+
+    .dest-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .dest-img{
+      border-radius:16px;
+      background:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/tallas.jpg') center/cover no-repeat;
+      min-height:320px;
+      position:relative;
+    }
+
+    .dest-chip{
+      position:absolute;
+      top:16px;
+      left:16px;
+      background:#000c;
+      color:#fff;
+      padding:.4rem .7rem;
+      border-radius:999px;
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+
+    .tallas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin:1rem 0 1.4rem;
+    }
+
+    .talla{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid #ccc;
+      cursor:pointer;
+      font-weight:600;
+      font-size:.9rem;
+      background:#fff;
+    }
+
+    .talla.active{
+      border-color:#000;
+      background:#000;
+      color:#fff;
+    }
+
+    .talla-info{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:1rem;
+    }
+
+    /* CONFIGURADOR */
+    .config{
+      padding:3.5rem 0 2.5rem;
+      background:#f7f7f7;
+    }
+
+    .config-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    .config-card{
+      background:#fff;
+      border-radius:14px;
+      padding:1.5rem;
+      border:1px solid #eee;
+      box-shadow:0 8px 18px rgba(0,0,0,.05);
+    }
+
+    .config-options label{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:.7rem;
+      font-size:.95rem;
+    }
+
+    .config-options input{
+      margin-right:.6rem;
+    }
+
+    .config-precio{
+      margin-top:1.2rem;
+      font-weight:800;
+      font-size:1.2rem;
+    }
+
+    /* IMPACTO */
+    .impacto{
+      padding:3.5rem 0 2.5rem;
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .impact-card{
+      background:#0b0b0b;
+      color:#fff;
+      border-radius:14px;
+      padding:1.6rem;
+    }
+
+    .impact-num{
+      font-size:1.8rem;
+      font-weight:900;
+      margin-bottom:.3rem;
+    }
+
+    .impact-label{
+      font-size:.9rem;
+      color:#ddd;
+    }
+
+    /* TESTIMONIOS */
+    .testimonios{
+      padding:3.5rem 0 2.5rem;
+      background:#f5f5f5;
+    }
+
+    .test-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .test-card{
+      background:#fff;
+      border-radius:10px;
+      padding:1.4rem;
+      border:1px solid #eee;
+      font-size:.95rem;
+    }
+
+    .test-author{
+      margin-top:1rem;
+      font-weight:700;
+      font-size:.9rem;
+    }
+
+    /* COMUNIDAD / NEWSLETTER */
+    .comunidad{
+      padding:3.5rem 0 3rem;
+      background:#000;
+      color:#fff;
+      text-align:center;
+    }
+
+    .comunidad p{
+      max-width:600px;
+      margin:.8rem auto 1.5rem;
+      color:#ddd;
+    }
+
+    .newsletter{
+      display:flex;
+      justify-content:center;
+      gap:.6rem;
+      flex-wrap:wrap;
+    }
+
+    .newsletter input{
+      padding:.8rem 1rem;
+      min-width:260px;
+      border-radius:999px;
+      border:none;
+      outline:none;
+    }
+
+    .newsletter button{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:.8rem 1.6rem;
+      background:var(--red);
+      color:#fff;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    .newsletter button:hover{
+      background:#b00008;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#000;
+      color:#fff;
+    }
+
+    .footer-inner{
+      max-width:var(--container);
+      margin:auto;
+      padding:2.2rem 1rem;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+    }
+
+    footer h4{
+      text-transform:uppercase;
+      font-size:.95rem;
+      margin-bottom:.7rem;
+    }
+
+    footer a{
+      color:#bbb;
+      text-decoration:none;
+      display:block;
+      font-size:.9rem;
+      margin:.25rem 0;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .copy{
+      border-top:1px solid #222;
+      text-align:center;
+      padding:1.1rem;
+      color:#aaa;
+      font-size:.85rem;
+    }
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 0.9s ease-out;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+      .product-grid{grid-template-columns:repeat(3,1fr);}
+      .tec-grid{grid-template-columns:1fr 1fr;}
+      .mat-grid{grid-template-columns:repeat(2,1fr);}
+      .atletas-inner,
+      .dest-grid,
+      .config-grid,
+      .acerca-grid,
+      .diseno-grid{grid-template-columns:1fr;}
+      .impact-grid{grid-template-columns:1fr 1fr;}
+      .test-grid{grid-template-columns:1fr 1fr;}
+    }
+
+    @media(max-width:720px){
+      .menu{display:none;}
+      .product-grid{grid-template-columns:1fr 1fr;}
+      .tec-grid,
+      .mat-grid,
+      .impact-grid,
+      .test-grid{grid-template-columns:1fr;}
+      .hero{height:70vh;}
+      .footer-inner{grid-template-columns:1fr 1fr;}
+    }
+
+    @media(max-width:520px){
+      .product-grid{grid-template-columns:1fr;}
+      .footer-inner{grid-template-columns:1fr;}
+      .parallax-eco h2{font-size:2.1rem;}
+      .parallax-eco p{font-size:1rem;}
+    }
+/* ===== BANNER TIPO PUMA (IGUAL AL DE LA FOTO) ===== */
+
+.puma-banner {
+  width: 100%;
+  height: 75vh;
+  background: url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/img1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 80px 0;
+}
+
+.puma-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.puma-banner-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 650px;
+  padding: 20px;
+}
+
+.puma-banner-content h2 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.puma-banner-content p {
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.puma-banner-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.puma-banner-buttons a {
+  background: #fff;
+  color: #000;
+  padding: 12px 20px;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: .2s ease;
+}
+
+.puma-banner-buttons a:hover {
+  background: #e3000b;
+  color: #fff;
+}
+
+
+/* SEPARADOR ABRE LA ALEGRÍA */
+.separador-alegria {
+  width: 100%;
+  height: 70vh;
+  background-image: url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/img2.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Oscurecer como PUMA */
+.separador-alegria::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(1.8px);
+  z-index: 0;
+}
+
+/* CONTENIDO */
+.alegria-contenido {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.alegria-contenido h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+
+.alegria-contenido p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* BOTONES */
+.alegria-botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.alegria-botones a {
+  background: #fff;
+  color: #000;
+  padding: .6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: .85rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .2s ease;
+}
+
+.alegria-botones a:hover {
+  background: #ddd;
+}
+
+.separador-25days {
+  width: 100%;
+  height: 80vh;
+  background: url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/img4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separador-25days::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.separador-25days .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+}
+
+.separador-25days h2 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+
+.separador-25days p {
+  font-size: .95rem;
+  letter-spacing: .5px;
+  margin-bottom: 1.7rem;
+  color: #e8e8e8;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.7rem;
+}
+
+.count-item {
+  text-align: center;
+}
+
+.count-item .num {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.count-item .label {
+  font-size: .8rem;
+  letter-spacing: 1px;
+}
+
+.btn-25 {
+  background: #fff;
+  padding: .8rem 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+/* ===== SEPARADOR TIPO PUMA (REGALA ESTILO) ===== */
+.separador-puma {
+  width: 100%;
+  height: 65vh;
+  background-image: url("C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/img3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* contenido a la derecha */
+  padding-right: 80px;
+  color: white;
+}
+
+.separador-puma::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* Sombra suave */
+}
+
+.separador-puma-content {
+  position: relative;
+  z-index: 2;
+  text-align: right;
+}
+
+.separador-puma-content h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.separador-puma-content p {
+  margin-top: 5px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.btn-separador {
+  margin-top: 15px;
+  background: white;
+  color: black;
+  padding: 10px 25px;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.btn-separador:hover {
+  background: #e5e5e5;
+}
+  </style>
+</head>
+<body>
+
+  <!-- TOP PROMO -->
+  <div class="topbar">
+    🌱 ENVÍO GRATIS EN LA LÍNEA ECO-STYLE · SOLO HOY
+  </div>
+
+  <!-- NAV -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <img src="https://1000marcas.net/wp-content/uploads/2019/12/logo-Puma.png" alt="PUMA">
+      </div>
+
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#masvendidos">Productos</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+
+      <div class="icons">
+        <i class='bx bx-search'></i>
+        <i class='bx bx-heart'></i>
+        <i class='bx bx-shopping-bag'></i>
+      </div>
+    </div>
+
+    <div class="subnav">
+      <div class="subnav-row">
+        <span class="chip">Hombre</span>
+        <span class="chip">Mujer</span>
+        <span class="chip">Niños</span>
+        <span class="chip">Running</span>
+        <span class="chip">Fútbol</span>
+        <span class="chip">Training</span>
+        <span class="chip">Outlet</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>PUMA ECO-STYLE</h1>
+      <p>Rendimiento de élite, materiales responsables. Entrena fuerte, deja una huella más ligera.</p>
+      <a href="#masvendidos" class="btn">Explorar colección</a>
+    </div>
+  </section>
+
+  <!-- COLECCIÓN DESTACADA -->
+  <section class="masvendidos" id="masvendidos">
+    <div class="wrap reveal">
+      <h2 class="section-title">Colección destacada</h2>
+      <p class="section-sub">
+        Calzado y apparel diseñados para quienes quieren darlo todo en la cancha y al mismo tiempo cuidar el planeta.
+      </p>
+
+      <div class="product-grid">
+        <!-- ZAPATILLAS -->
+        <article class="card reveal">
+          <div class="card-img" style="background-image:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/zapatonegro-puma.png');"></div>
+          <div class="card-body">
+            <div class="card-name">Zapatillas ECO-STYLE</div>
+            <div class="card-desc">Algodón orgánico · Piñatex · Caucho reciclado.</div>
+            <div class="card-price">$350.000</div>
+            <a href="zapatillas.html" class="btn-mini">Ver más</a>
+          </div>
+        </article>
+
+        <!-- GUAYOS -->
+        <article class="card reveal">
+          <div class="card-img" style="background-image:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/guayo-puma.png');"></div>
+          <div class="card-body">
+            <div class="card-name">Guayos ECO-STYLE</div>
+            <div class="card-desc">Taches de caucho FSC · Upper rPET reciclado.</div>
+            <div class="card-price">$420.000</div>
+            <a href="guayos.html" class="btn-mini">Ver más</a>
+          </div>
+        </article>
+
+        <!-- GORRA -->
+        <article class="card reveal">
+          <div class="card-img" style="background-image:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/gorra-puma.png');"></div>
+          <div class="card-body">
+            <div class="card-name">Gorra ECO-STYLE</div>
+            <div class="card-desc">Cáñamo · rPET · banda interna absorbente.</div>
+            <div class="card-price">$120.000</div>
+            <a href="gorra.html" class="btn-mini">Ver más</a>
+          </div>
+        </article>
+
+        <!-- CAMISETA -->
+        <article class="card reveal">
+          <div class="card-img" style="background-image:url('C:/Users/santi/OneDrive/Escritorio/ProyectoPuma/camiseta-puma.png');"></div>
+          <div class="card-body">
+            <div class="card-name">Camiseta ECO-STYLE</div>
+            <div class="card-desc">Algodón orgánico · Tintes al agua · Fit deportivo.</div>
+            <div class="card-price">$180.000</div>
+            <a href="camiseta.html" class="btn-mini">Ver más</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARALLAX HUELLA ECO-STYLE -->
+  <section class="parallax-eco" id="nosotros">
+    <div class="content">
+      <h2>Huella eco-style</h2>
+      <p>
+        Cada pisada deja marca en la cancha, pero no tiene que dejarla en el planeta.
+        ECO-STYLE es la línea que conecta tu energía con un futuro más limpio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ACERCA DE ECO-STYLE -->
+  <section class="acerca">
+    <div class="wrap acerca-grid reveal">
+      <div class="acerca-text">
+        <h2 class="section-title">Acerca de ECO-STYLE</h2>
+        <p>
+          ECO-STYLE nace como una respuesta a una pregunta clara: ¿es posible competir al máximo nivel
+          sin ignorar el impacto ambiental? La línea busca demostrar que sí es posible.
+        </p>
+        <p>
+          El proyecto combina materiales sostenibles, diseño deportivo y una identidad que invita
+          a los usuarios a sentirse parte de un movimiento: cuidar su cuerpo mientras cuidan el planeta.
+        </p>
+        <p>
+          Esta colección está pensada para deportistas, estudiantes, aficionados y cualquier persona
+          que quiera entrenar, jugar o vivir su día a día con una huella más ligera.
+        </p>
+      </div>
+      <div class="acerca-img"></div>
+    </div>
+  </section>
+
+  <!-- MISIÓN Y VISIÓN -->
+  <section class="mv">
+    <div class="wrap mv-grid reveal">
+      <div class="mv-card">
+        <h3>Misión</h3>
+        <p>
+          Crear productos deportivos de alto rendimiento que integren innovación, sostenibilidad y diseño,
+          reduciendo la huella de carbono del atleta moderno y motivando un estilo de vida responsable.
+        </p>
+      </div>
+      <div class="mv-card">
+        <h3>Visión</h3>
+        <p>
+          Convertir a ECO-STYLE en la línea sostenible más influyente del deporte, inspirando a nuevas generaciones
+          a entrenar, competir y vestir de forma consciente, sin sacrificar comodidad ni rendimiento.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- SEPARADOR TIPO PUMA (IDÉNTICO AL DE LA FOTO) -->
+<section class="puma-banner">
+  <div class="puma-banner-content">
+
+    <h2>HASTA 50% DE DESCUENTO<br>BLACK FRIDAY YA COMENZÓ</h2>
+    <p>SE APLICAN EXCLUSIONES.</p>
+
+    <div class="puma-banner-buttons">
+      <a href="#masvendidos">REBAJAS PARA HOMBRE</a>
+      <a href="#masvendidos">REBAJAS PARA MUJER</a>
+      <a href="#masvendidos">REBAJAS PARA NIÑOS</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- DISEÑO DE PRODUCTO -->
+  <section class="diseno">
+    <div class="wrap diseno-grid reveal">
+      <div>
+        <h2 class="section-title">Diseño de producto</h2>
+        <p>
+          Cada producto ECO-STYLE se diseña con tres pilares clave: funcionalidad, estética y sostenibilidad.
+          Las suelas son el corazón del rendimiento: agarre, rebote, resistencia y ergonomía para cada tipo de juego.
+        </p>
+        <p>
+          Los materiales se eligen por su impacto y desempeño: rPET, algodón orgánico, Piñatex, BioGrip y EcoFoam
+          se combinan para crear productos ligeros, cómodos y duraderos.
+        </p>
+        <p>
+          Las líneas gráficas, colores y texturas buscan transmitir movimiento, energía y conexión directa con la naturaleza:
+          tu juego, tu cuerpo y el planeta en la misma dirección.
+        </p>
+      </div>
+      <div class="diseno-img"></div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍA ECO -->
+  <section class="tecnologia" id="tecnologia">
+    <div class="wrap reveal">
+      <h2 class="section-title">Tecnología eco-style</h2>
+      <p class="section-sub">
+        Cada pieza combina innovación deportiva con soluciones sostenibles para reducir el impacto sin perder rendimiento.
+      </p>
+
+      <div class="tec-grid">
+        <article class="tec-card reveal">
+          <div class="tec-icon"><i class='bx bx-water'></i></div>
+          <h3>EcoFoam</h3>
+          <p>Espuma de mediasuela con mezcla de contenido reciclado que mantiene la reactividad y mejora la durabilidad.</p>
+        </article>
+        <article class="tec-card reveal">
+          <div class="tec-icon"><i class='bx bx-wind'></i></div>
+          <h3>EcoMesh</h3>
+          <p>Tejido superior ligero y altamente transpirable elaborado con fibras rPET provenientes de botellas recicladas.</p>
+        </article>
+        <article class="tec-card reveal">
+          <div class="tec-icon"><i class='bx bx-leaf'></i></div>
+          <h3>BioGrip</h3>
+          <p>Compuesto de suela con caucho natural certificado y pigmentos sin metales pesados para un agarre óptimo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+<section class="separador-alegria">
+  <div class="alegria-contenido">
+    <h2>ABRE LA ALEGRÍA</h2>
+    <p>Comprar la guía de regalos</p>
+
+    <div class="alegria-botones">
+      <a href="#">Ver regalos para hombres</a>
+      <a href="#">Ver regalos para mujeres</a>
+      <a href="#">Ver regalos para niños</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- MATERIALES -->
+  <section class="materiales">
+  <div class="wrap">
+    <h2 class="section-title">Materiales responsables</h2>
+    <p class="section-sub">
+      Seleccionamos materiales pensando en el rendimiento, la comodidad y el planeta.
+    </p>
+
+    <div class="mat-grid">
+      
+      <div class="mat-card">
+        <span class="mat-tag">Tejido</span>
+        <h4>Algodón orgánico</h4>
+        <p>Sin pesticidas agresivos y menor consumo de agua. Suave y perfecto para entrenamientos.</p>
+      </div>
+
+      <div class="mat-card">
+        <span class="mat-tag">Alternativa al cuero</span>
+        <h4>Piñatex</h4>
+        <p>Fibras de hoja de piña reutilizadas. Textura premium y reducción de residuos agrícolas.</p>
+      </div>
+
+      <div class="mat-card">
+        <span class="mat-tag">Fibra</span>
+        <h4>rPET</h4>
+        <p>Plástico reciclado transformado en un tejido ligero, resistente y flexible.</p>
+      </div>
+
+      <div class="mat-card">
+        <span class="mat-tag">Suela</span>
+        <h4>Caucho reciclado</h4>
+        <p>Partículas reutilizadas de suelas y restos industriales integradas en nuevas placas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ATLETAS -->
+  <section class="atletas">
+    <div class="wrap atletas-inner reveal">
+      <div>
+        <span class="badge-eco">Embajadores eco-style</span>
+        <h2 class="section-title" style="color:#fff;">El deporte como movimiento</h2>
+        <p class="section-sub" style="color:#ddd;">
+          Atletas que viven el juego con la misma intensidad con la que cuidan el planeta.
+          ECO-STYLE acompaña su rendimiento con productos pensados para el futuro del deporte.
+        </p>
+        <p style="font-size:.95rem;color:#ccc;">
+          Cada par de guayos ECO-STYLE representa menos residuos, más reutilización y un paso hacia canchas más verdes.
+        </p>
+      </div>
+      <div class="atleta-img"></div>
+    </div>
+  </section>
+
+<section class="separador-puma">
+  <div class="separador-puma-content">
+    <h2>REGALA ESTILO</h2>
+    <p>GANA LAS VACACIONES CON SPEEDCAT</p>
+    <a href="#" class="btn-separador">VER SPEEDCAT</a>
+  </div>
+</section>
+
+  <!-- PRODUCTO DESTACADO + TALLAS -->
+  <section class="destacado">
+    <div class="wrap dest-grid reveal">
+      <div class="dest-img">
+        <div class="dest-chip">Guayos ECO-STYLE</div>
+      </div>
+      <div>
+        <h2 class="section-title">Encuentra tu talla ideal</h2>
+        <p class="section-sub">
+          Elige la talla que usas normalmente y te recomendamos el fit ideal.
+        </p>
+
+        <div class="tallas" id="tallas">
+          <div class="talla">38</div>
+          <div class="talla">39</div>
+          <div class="talla">40</div>
+          <div class="talla">41</div>
+          <div class="talla">42</div>
+          <div class="talla">43</div>
+        </div>
+
+        <div class="talla-info" id="tallaInfo">
+          Selecciona una talla para ver la recomendación.
+        </div>
+        <p style="font-size:.9rem;color:#555;">
+          Consejo: si juegas con doble media, elige media talla más respecto a tu calzado casual.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIGURADOR ECO-SHOE -->
+  <section class="config">
+    <div class="wrap reveal">
+      <h2 class="section-title">Configura tu eco-shoe</h2>
+      <p class="section-sub">
+        Diseña un modelo ECO-STYLE según tu prioridad: ligereza, agarre o sostenibilidad máxima.
+      </p>
+
+      <div class="config-grid">
+        <div class="config-card reveal">
+          <h3 style="margin-bottom:.8rem;">Elige tus focos</h3>
+          <div class="config-options">
+            <label><span><input type="checkbox" class="opt" data-precio="40000"> Upper con 90% rPET reciclado</span><span>+ $40.000</span></label>
+            <label><span><input type="checkbox" class="opt" data-precio="60000"> Suela con 50% caucho reciclado</span><span>+ $60.000</span></label>
+            <label><span><input type="checkbox" class="opt" data-precio="30000"> Plantilla EcoFoam de alta respuesta</span><span>+ $30.000</span></label>
+            <label><span><input type="checkbox" class="opt" data-precio="20000"> Cordones de fibras vegetales</span><span>+ $20.000</span></label>
+          </div>
+
+          <div class="config-precio" id="precioConfig">Precio estimado: $350.000</div>
+          <p style="font-size:.85rem;color:#777;margin-top:.4rem;">*Valores usados solo con fines académicos.</p>
+        </div>
+
+        <div class="config-card reveal">
+          <h3 style="margin-bottom:.8rem;">Resumen conceptual</h3>
+          <p id="configResumen" style="font-size:.95rem;color:#444;">
+            Selecciona opciones a la izquierda para construir tu versión ideal de ECO-STYLE: más ligera, más resistente o más eco.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="separador-25days">
+  <div class="content">
+    <h2>25 DAYS OF PUMA</h2>
+    <p>HOT COLLABS, NEW DROPS AND A SURPRISE ON DAY 25<br>STARTS 12/1. DOWNLOAD THE APP TO BE NOTIFIED.</p>
+
+    <div class="countdown">
+      <div class="count-item">
+        <div class="num" id="dias">00</div>
+        <div class="label">DÍAS</div>
+      </div>
+      <div class="count-item">
+        <div class="num" id="horas">00</div>
+        <div class="label">HORAS</div>
+      </div>
+      <div class="count-item">
+        <div class="num" id="minutos">00</div>
+        <div class="label">MINUTOS</div>
+      </div>
+      <div class="count-item">
+        <div class="num" id="segundos">00</div>
+        <div class="label">SEGUNDOS</div>
+      </div>
+    </div>
+
+    <button class="btn-25">DOWNLOAD NOW</button>
+  </div>
+</section>
+
+<script>
+function actualizarCuentaRegresiva() {
+  const objetivo = new Date("Dec 25, 2025 00:00:00").getTime();
+  const ahora = new Date().getTime();
+  const diferencia = objetivo - ahora;
+
+  if (diferencia < 0) return;
+
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+  document.getElementById("dias").textContent = dias.toString().padStart(2, '0');
+  document.getElementById("horas").textContent = horas.toString().padStart(2, '0');
+  document.getElementById("minutos").textContent = minutos.toString().padStart(2, '0');
+  document.getElementById("segundos").textContent = segundos.toString().padStart(2, '0');
+}
+
+setInterval(actualizarCuentaRegresiva, 1000);
+actualizarCuentaRegresiva();
+</script>
+
+
+  <!-- IMPACTO -->
+  <section class="impacto" id="impacto">
+    <div class="wrap reveal">
+      <h2 class="section-title">Tu impacto con eco-style</h2>
+      <p class="section-sub">
+        Los siguientes datos son métricas conceptuales para mostrar cómo una colección sostenible puede sumar al cuidado del planeta.
+      </p>
+
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <div class="impact-num">+1.200.000</div>
+          <div class="impact-label">botellas plásticas recicladas convertidas en tejido rPET.</div>
+        </div>
+        <div class="impact-card reveal">
+          <div class="impact-num">-35%</div>
+          <div class="impact-label">reducción estimada de huella de carbono frente a líneas tradicionales.</div>
+        </div>
+        <div class="impact-card reveal">
+          <div class="impact-num">+8.500</div>
+          <div class="impact-label">atletas formando parte de la comunidad ECO-STYLE en todo el mundo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <div class="wrap reveal">
+      <h2 class="section-title">Lo que dice la comunidad</h2>
+      <p class="section-sub">
+        Historias de personas que combinan deporte, estilo y responsabilidad ambiental.
+      </p>
+
+      <div class="test-grid">
+        <article class="test-card reveal">
+          “Uso los guayos ECO-STYLE para entrenar tres veces por semana. Son ligeros, cómodos y me encanta saber que están hechos con materiales reciclados.”
+          <div class="test-author">— Laura, mediocampista</div>
+        </article>
+        <article class="test-card reveal">
+          “La suela tiene un agarre increíble en pasto sintético y natural. Saber que parte del caucho es reciclado hace que cada gol cuente doble.”
+          <div class="test-author">— Diego, delantero</div>
+        </article>
+        <article class="test-card reveal">
+          “La camiseta ECO-STYLE se siente fresca incluso en los entrenos más largos. Es la prueba de que la ropa sostenible también puede rendir al máximo.”
+          <div class="test-author">— Camila, corredora</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNIDAD / NEWSLETTER -->
+  <section class="comunidad" id="ayuda">
+    <div class="wrap reveal" style="text-align:center;">
+      <h2 class="section-title" style="color:#fff;">Únete a la comunidad eco-style</h2>
+      <p>
+        Recibe lanzamientos exclusivos, retos deportivos sostenibles y noticias sobre cómo el deporte puede transformar el planeta.
+      </p>
+      <div class="newsletter">
+        <input type="email" placeholder="Ingresa tu correo">
+        <button>Unirme</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Ayuda</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Envíos y devoluciones</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div>
+        <h4>Compañía</h4>
+        <a href="#">Acerca de PUMA</a>
+        <a href="#">Sostenibilidad</a>
+        <a href="#">Prensa</a>
+      </div>
+      <div>
+        <h4>Eco-Style</h4>
+        <a href="#">Materiales</a>
+        <a href="#">Compromisos</a>
+        <a href="#">Iniciativas</a>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <a href="#"><i class='bx bxl-instagram' ></i> Instagram</a>
+        <a href="#"><i class='bx bxl-facebook'></i> Facebook</a>
+        <a href="#"><i class='bx bxl-youtube'></i> YouTube</a>
+      </div>
+    </div>
+    <div class="copy">
+      © 2025 PUMA ECO-STYLE · Sitio conceptual para proyecto académico
+    </div>
+  </footer>
+
+  <script>
+    // Selección de talla
+    const tallaElems = document.querySelectorAll('.talla');
+    const tallaInfo = document.getElementById('tallaInfo');
+
+    tallaElems.forEach(t => {
+      t.addEventListener('click', () => {
+        tallaElems.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        tallaInfo.textContent =
+          'Para la talla ' + t.textContent +
+          ' recomendamos un ajuste ceñido al pie para máximo control en el campo.';
+      });
+    });
+
+    // Configurador ECO-SHOE
+    const basePrecio = 350000;
+    const opts = document.querySelectorAll('.opt');
+    const precioEl = document.getElementById('precioConfig');
+    const resumenEl = document.getElementById('configResumen');
+
+    function actualizarConfig(){
+      let extra = 0;
+      let textos = [];
+      opts.forEach(o => {
+        if(o.checked){
+          extra += Number(o.dataset.precio);
+          textos.push(o.parentElement.innerText.split('+')[0].trim());
+        }
+      });
+      const total = basePrecio + extra;
+      precioEl.textContent = 'Precio estimado: $' + total.toLocaleString('es-CO');
+
+      if(textos.length === 0){
+        resumenEl.textContent = 'Selecciona opciones para construir tu versión ideal de ECO-STYLE: más ligera, más resistente o más eco.';
+      }else{
+        resumenEl.textContent = 'Tu ECO-SHOE incluye: ' + textos.join(', ') +
+          '. Un diseño pensado para tu estilo de juego y para el medio ambiente.';
+      }
+    }
+
+    opts.forEach(o => o.addEventListener('change', actualizarConfig));
+    actualizarConfig();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll(){
+      for(const el of reveals){
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 60){
+          el.classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
